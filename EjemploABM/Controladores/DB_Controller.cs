@@ -18,7 +18,7 @@ namespace EjemploABM.Controladores
         {
             var builder = new SqlConnectionStringBuilder();
 
-            builder.DataSource = @"(localdb)\Local"; //NOMBRE DEL SERVIDOR
+            builder.DataSource = @"(localdb)\localdb"; //NOMBRE DEL SERVIDOR
             builder.InitialCatalog = "wilsondb"; //NOMBRE DE LA BASE DE DATOS
             builder.IntegratedSecurity = true; //TIENE O NO SEGURIDAD INTEGRADA CON WINDOWS
 

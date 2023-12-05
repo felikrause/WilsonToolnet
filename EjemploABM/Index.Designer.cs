@@ -1,4 +1,6 @@
-﻿namespace EjemploABM
+﻿using System;
+
+namespace EjemploABM
 {
     partial class Index
     {
@@ -82,11 +84,12 @@
             this.btn_usr.TabIndex = 4;
             this.btn_usr.Text = "Usuarios";
             this.btn_usr.UseVisualStyleBackColor = true;
+            this.btn_usr.Click += new System.EventHandler(this.btn_usr_Click_1);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(597, 9);
+            this.label1.Location = new System.Drawing.Point(128, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 5;
@@ -117,6 +120,8 @@
             this.PerformLayout();
 
         }
+
+       
 
         #endregion
 

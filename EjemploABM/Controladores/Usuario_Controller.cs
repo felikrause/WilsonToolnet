@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.UI.WebControls.WebParts;
+
 using System.Windows.Forms;
 
 namespace EjemploABM.Controladores

@@ -47,7 +47,7 @@ namespace EjemploABM.ControlesDeUsuario
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
             this.Name = "Productos_UC";
-            this.Size = new System.Drawing.Size(384, 263);
+            this.Size = new System.Drawing.Size(752, 449);
             this.ResumeLayout(false);
             this.PerformLayout();
 
