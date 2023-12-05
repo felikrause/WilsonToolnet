@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.lb_nombre = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
@@ -43,26 +43,29 @@
             this.comboBoxCat = new System.Windows.Forms.ComboBox();
             this.comboBoxSub = new System.Windows.Forms.ComboBox();
             this.btn_confirmar = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.txt_cantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(340, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Crear Producto";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 88);
+            this.label2.Location = new System.Drawing.Point(340, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre:";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Crear Producto";
+            this.label2.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lb_nombre
+            // 
+            this.lb_nombre.AutoSize = true;
+            this.lb_nombre.Location = new System.Drawing.Point(54, 88);
+            this.lb_nombre.Name = "lb_nombre";
+            this.lb_nombre.Size = new System.Drawing.Size(47, 13);
+            this.lb_nombre.TabIndex = 1;
+            this.lb_nombre.Text = "Nombre:";
             // 
             // txt_nombre
             // 
@@ -125,17 +128,18 @@
             // 
             // btn_cargar_img
             // 
-            this.btn_cargar_img.Location = new System.Drawing.Point(432, 88);
+            this.btn_cargar_img.Location = new System.Drawing.Point(377, 88);
             this.btn_cargar_img.Name = "btn_cargar_img";
             this.btn_cargar_img.Size = new System.Drawing.Size(153, 23);
             this.btn_cargar_img.TabIndex = 9;
             this.btn_cargar_img.Text = "Cargar Imagen";
             this.btn_cargar_img.UseVisualStyleBackColor = true;
+            this.btn_cargar_img.Click += new System.EventHandler(this.btn_cargar_img_Click_1);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(387, 183);
+            this.label6.Location = new System.Drawing.Point(313, 180);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 10;
@@ -145,7 +149,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(374, 263);
+            this.label7.Location = new System.Drawing.Point(291, 260);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 11;
@@ -155,7 +159,7 @@
             // comboBoxCat
             // 
             this.comboBoxCat.FormattingEnabled = true;
-            this.comboBoxCat.Location = new System.Drawing.Point(448, 180);
+            this.comboBoxCat.Location = new System.Drawing.Point(377, 177);
             this.comboBoxCat.Name = "comboBoxCat";
             this.comboBoxCat.Size = new System.Drawing.Size(137, 21);
             this.comboBoxCat.TabIndex = 12;
@@ -163,7 +167,7 @@
             // comboBoxSub
             // 
             this.comboBoxSub.FormattingEnabled = true;
-            this.comboBoxSub.Location = new System.Drawing.Point(448, 260);
+            this.comboBoxSub.Location = new System.Drawing.Point(374, 252);
             this.comboBoxSub.Name = "comboBoxSub";
             this.comboBoxSub.Size = new System.Drawing.Size(137, 21);
             this.comboBoxSub.TabIndex = 13;
@@ -179,11 +183,21 @@
             this.btn_confirmar.UseVisualStyleBackColor = true;
             this.btn_confirmar.Click += new System.EventHandler(this.btn_confirmar_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(567, 88);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(261, 287);
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // FormProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 483);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btn_confirmar);
             this.Controls.Add(this.comboBoxSub);
             this.Controls.Add(this.comboBoxCat);
@@ -197,11 +211,12 @@
             this.Controls.Add(this.txt_descripcion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_nombre);
+            this.Controls.Add(this.lb_nombre);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "FormProducto";
             this.Text = "FormProducto";
             ((System.ComponentModel.ISupportInitialize)(this.txt_cantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,8 +224,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lb_nombre;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_descripcion;
@@ -224,5 +239,6 @@
         private System.Windows.Forms.ComboBox comboBoxCat;
         private System.Windows.Forms.ComboBox comboBoxSub;
         private System.Windows.Forms.Button btn_confirmar;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

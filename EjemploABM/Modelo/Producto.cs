@@ -10,29 +10,36 @@ namespace EjemploABM.Modelo
     {
 
         public int Id { get; set; }
-        public String Nombre { get; set; }
-        public String Descripcion { get; set; }
-        public Categoria Cat { get; set; }
-        public string Img { get; set; }
-        public int Precio { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public double Precio { get; set; }
+        
         public int Stock { get; set; }
+        public string Img { get; set; }
+
+        
+
+        
 
         public int CategoriaId { get; set; }
 
         public int SubcategoriaId { get; set; }
 
 
-        public Producto(int id, string name, string desc, Categoria cat, string img, int precio, int stock, int subcategoriaid, int categoriaid)
+        public Producto(int id, string name, string desc, double precio, string img,int subcategoriaid, int categoriaid, int stock)
         {
             Id = id;
             Nombre = name;
             Descripcion = desc;
-            Cat = cat;
-            Img = img;
             Precio = precio;
-            Stock = stock;
+            
+            Img = img;
+            
             SubcategoriaId = subcategoriaid;
             CategoriaId = categoriaid;
+            
+            Stock = stock;
+
         }
 
         public Producto()

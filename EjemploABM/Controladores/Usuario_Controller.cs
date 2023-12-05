@@ -305,6 +305,70 @@ namespace EjemploABM.Controladores
             }
         }
 
+        public static Usuario buscarPorDni (string dni)
+        {
+            if (string.IsNullOrWhiteSpace(dni))
+            {
+                // Validación de campo no vacío
+                throw new ArgumentException("El campo DNI no puede estar vacío.");
+            }
+
+            Usuario usr = new Usuario();
+            string query = "SELECT * FROM dbo.usuario WHERE dni = @dni;";
+
+            SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
+            cmd.Parameters.AddWithValue("@dni", dni);
+
+            try
+            {
+                DB_Controller.connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    usr = new Usuario(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetInt32(8));
+                    Trace.WriteLine("Usr encontrado, nombre: " + reader.GetString(1));
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hay un error en la query: " + ex.Message);
+            }
+            finally
+            {
+                DB_Controller.connection.Close();
+            }
+
+            return usr;
+        }
+
+
+
+
+        public static bool ExisteUsuarioConDNI(string dni)
+        {
+            string query = "SELECT COUNT(*) FROM dbo.usuario WHERE dni = @dni;";
+
+            SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
+            cmd.Parameters.AddWithValue("@dni", dni);
+
+            try
+            {
+                DB_Controller.connection.Open();
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0; // Returns true if there is at least one client with the provided DNI
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al verificar la existencia del usuario: " + ex.Message);
+            }
+            finally
+            {
+                DB_Controller.connection.Close();
+            }
+        }
 
     }
 }

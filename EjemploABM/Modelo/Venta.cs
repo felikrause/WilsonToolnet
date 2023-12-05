@@ -13,7 +13,7 @@ namespace EjemploABM.Modelo
         public float PrecioTotal { get; set; }
         public DateTime Fecha { get; set; }
         public string MetodoDePago { get; set; }
-        public float Descuento { get; set; }
+        
         public int ClienteId { get; set; }
         public int UsuarioId { get; set; }
 
@@ -22,13 +22,12 @@ namespace EjemploABM.Modelo
             // Constructor vacío
         }
 
-        public Venta(int id, float precioTotal, DateTime fecha, string metodoDePago, float descuento, int clienteId, int usuarioId)
+        public Venta(int id, float precioTotal, DateTime fecha, string metodoDePago, int clienteId, int usuarioId)
         {
             Id = id;
             PrecioTotal = precioTotal;
             Fecha = fecha;
             MetodoDePago = metodoDePago;
-            Descuento = descuento;
             ClienteId = clienteId;
             UsuarioId = usuarioId;
         }

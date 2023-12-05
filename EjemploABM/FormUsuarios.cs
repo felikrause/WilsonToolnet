@@ -189,6 +189,11 @@ namespace EjemploABM
         {
 
         }
+
+        private void txt_dni_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -61,7 +61,7 @@ namespace EjemploABM.ControlesDeUsuario
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(111, 35);
             this.btn_add.TabIndex = 2;
-            this.btn_add.Text = "Crear";
+            this.btn_add.Text = "Agregar";
             this.btn_add.UseVisualStyleBackColor = true;
             this.btn_add.Click += new System.EventHandler(this.btn_new_Click);
             // 

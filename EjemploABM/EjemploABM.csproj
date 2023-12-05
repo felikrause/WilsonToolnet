@@ -46,8 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controladores\Categoria_Controller.cs" />
     <Compile Include="Controladores\DB_Controller.cs" />
+    <Compile Include="Controladores\Producto_Controller.cs" />
+    <Compile Include="Controladores\Subcategoria_Controller.cs" />
     <Compile Include="Controladores\Usuario_Controller.cs" />
+    <Compile Include="Controladores\Venta_Controller.cs" />
     <Compile Include="ControlesDeUsuario\Categorias_UC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -90,11 +94,35 @@
     <Compile Include="FormProducto.Designer.cs">
       <DependentUpon>FormProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSubcategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSubcategorias.Designer.cs">
+      <DependentUpon>FormSubcategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormUsuarios.Designer.cs">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVenta.Designer.cs">
+      <DependentUpon>FormVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVerProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVerProd.Designer.cs">
+      <DependentUpon>FormVerProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCategorias.Designer.cs">
+      <DependentUpon>FormCategorias.cs</DependentUpon>
     </Compile>
     <Compile Include="Index.cs">
       <SubType>Form</SubType>
@@ -103,7 +131,6 @@
       <DependentUpon>Index.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Categoria.cs" />
-    <Compile Include="Modelo\Cliente.cs" />
     <Compile Include="Modelo\DetalleVenta.cs" />
     <Compile Include="Modelo\Producto.cs" />
     <Compile Include="Modelo\Subcategoria.cs" />
@@ -117,8 +144,14 @@
     <EmbeddedResource Include="ControlesDeUsuario\Productos_UC.resx">
       <DependentUpon>Productos_UC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ControlesDeUsuario\Subcategoria_UC.resx">
+      <DependentUpon>Subcategoria_UC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControlesDeUsuario\Usuarios_UC.resx">
       <DependentUpon>Usuarios_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesDeUsuario\Venta_UC.resx">
+      <DependentUpon>Venta_UC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -126,8 +159,20 @@
     <EmbeddedResource Include="FormProducto.resx">
       <DependentUpon>FormProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormSubcategorias.resx">
+      <DependentUpon>FormSubcategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormUsuarios.resx">
       <DependentUpon>FormUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVenta.resx">
+      <DependentUpon>FormVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVerProd.resx">
+      <DependentUpon>FormVerProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCategorias.resx">
+      <DependentUpon>FormCategorias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Index.resx">
       <DependentUpon>Index.cs</DependentUpon>
