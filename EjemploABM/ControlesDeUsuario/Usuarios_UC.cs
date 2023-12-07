@@ -76,14 +76,13 @@ namespace EjemploABM.ControlesDeUsuario
 
         }
 
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Trace.WriteLine("estoy andando");
             Debug.WriteLine("Celda seleccionada: " + e.ColumnIndex + ", " + e.RowIndex);
 
             var senderGrid = (DataGridView)sender;
-            if (senderGrid.Columns[e.ColumnIndex].Name == "Editar")
+            if (senderGrid.Columns[e.ColumnIndex].Name == "Editarr")
             {
                 //EDITAMOS
                 Debug.WriteLine("Valor de la celda: " + dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
@@ -104,12 +103,95 @@ namespace EjemploABM.ControlesDeUsuario
 
                 }
             }
-            else if (senderGrid.Columns[e.ColumnIndex].Name == "Eliminar")
+            else if (senderGrid.Columns[e.ColumnIndex].Name == "Eliminarr")
             {
+                int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Trace.WriteLine("el id es: " + id);
+
+                DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas eliminar este usuario?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    try
+                    {
+                        // Llama al método para eliminar el producto directamente
+                        bool eliminado = Usuario_Controller.eliminarUsuario(id);
+
+                        if (eliminado)
+                        {
+                            Trace.WriteLine("usuario eliminado exitosamente");
+                            cargarUsuarios(); // Otra función para recargar los productos en tu DataGridView
+                        }
+                        else
+                        {
+                            Trace.WriteLine("Error al intentar eliminar el usuario");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Trace.WriteLine("Error al eliminar el usuario: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            Trace.WriteLine("estoy andando");
+            Debug.WriteLine("Celda seleccionada: " + e.ColumnIndex + ", " + e.RowIndex);
+
+            var senderGrid = (DataGridView)sender;
+            if (senderGrid.Columns[e.ColumnIndex].Name == "Editarr")
+            {
+                //EDITAMOS
                 Debug.WriteLine("Valor de la celda: " + dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
                 int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
                 Trace.WriteLine("el id es: " + id);
-                Usuario user_eliminar = Usuario_Controller.obtenerPorId(id);
+
+                Usuario user_editar = Usuario_Controller.obtenerPorId(id);
+
+                FormUsuarios frmUser = new FormUsuarios(user_editar);
+
+                DialogResult dr = frmUser.ShowDialog();
+
+                if (dr == DialogResult.OK)
+                {
+                    Trace.WriteLine("OK - se edito");
+                    //ACTUALIZAR LA LISTA
+                    cargarUsuarios();
+
+                }
+            }
+            else if (senderGrid.Columns[e.ColumnIndex].Name == "Eliminarr")
+            {
+                int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                Trace.WriteLine("el id es: " + id);
+
+                DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas eliminar este usuario?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    try
+                    {
+                        // Llama al método para eliminar el producto directamente
+                        bool eliminado = Usuario_Controller.eliminarUsuario(id);
+
+                        if (eliminado)
+                        {
+                            Trace.WriteLine("usuario eliminado exitosamente");
+                            cargarUsuarios(); // Otra función para recargar los productos en tu DataGridView
+                        }
+                        else
+                        {
+                            Trace.WriteLine("Error al intentar eliminar el usuario");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Trace.WriteLine("Error al eliminar el usuario: " + ex.Message);
+                    }
+                }
             }
         }
     }

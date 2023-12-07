@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,6 +33,7 @@ namespace EjemploABM
 
             txt_nombre.Text = cat.Nombre.ToString();
             situacion = "edicion";
+            label2.Text = "Editar Categoria";
 
             lb_nombre.Text = "Editar Categoria";
             btn_crear.Text = "Editar";
@@ -63,7 +65,7 @@ namespace EjemploABM
                 return;
             }
 
-            Categoria cat = new Categoria(0, txt_nombre.Text);
+            Categoria cat = new Categoria(id_editar, txt_nombre.Text);
 
             if (Categoria_Controller.crearCategoria(cat))
             {
@@ -79,7 +81,7 @@ namespace EjemploABM
                 return;
             }
 
-            Categoria cat = new Categoria(0, txt_nombre.Text);
+            Categoria cat = new Categoria(id_editar, txt_nombre.Text);
 
             if (Categoria_Controller.editarCategoria(cat))
             {
@@ -98,6 +100,11 @@ namespace EjemploABM
         }
 
         private void txt_nombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormCategorias_Load(object sender, EventArgs e)
         {
 
         }

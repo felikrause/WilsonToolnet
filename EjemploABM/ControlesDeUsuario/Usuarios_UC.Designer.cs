@@ -43,6 +43,17 @@ namespace EjemploABM.ControlesDeUsuario
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Maill = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefonoo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccionn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dnii = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contraseñaa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Roll = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editarr = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminarr = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,11 +162,78 @@ namespace EjemploABM.ControlesDeUsuario
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 66);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Nombre,
+            this.Apellido,
+            this.Maill,
+            this.Telefonoo,
+            this.Direccionn,
+            this.Dnii,
+            this.Contraseñaa,
+            this.Roll,
+            this.Editarr,
+            this.Eliminarr});
+            this.dataGridView1.Location = new System.Drawing.Point(3, 54);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(975, 381);
+            this.dataGridView1.Size = new System.Drawing.Size(1151, 411);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            // 
+            // Maill
+            // 
+            this.Maill.HeaderText = "Mail";
+            this.Maill.Name = "Maill";
+            // 
+            // Telefonoo
+            // 
+            this.Telefonoo.HeaderText = "Telefono";
+            this.Telefonoo.Name = "Telefonoo";
+            // 
+            // Direccionn
+            // 
+            this.Direccionn.HeaderText = "Direccion";
+            this.Direccionn.Name = "Direccionn";
+            // 
+            // Dnii
+            // 
+            this.Dnii.HeaderText = "Dni";
+            this.Dnii.Name = "Dnii";
+            // 
+            // Contraseñaa
+            // 
+            this.Contraseñaa.HeaderText = "Contraseña";
+            this.Contraseñaa.Name = "Contraseñaa";
+            // 
+            // Roll
+            // 
+            this.Roll.HeaderText = "Rol";
+            this.Roll.Name = "Roll";
+            // 
+            // Editarr
+            // 
+            this.Editarr.HeaderText = "Editar";
+            this.Editarr.Name = "Editarr";
+            // 
+            // Eliminarr
+            // 
+            this.Eliminarr.HeaderText = "Eliminar";
+            this.Eliminarr.Name = "Eliminarr";
             // 
             // Usuarios_UC
             // 
@@ -165,7 +243,7 @@ namespace EjemploABM.ControlesDeUsuario
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.label1);
             this.Name = "Usuarios_UC";
-            this.Size = new System.Drawing.Size(1088, 570);
+            this.Size = new System.Drawing.Size(1195, 573);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -188,5 +266,16 @@ namespace EjemploABM.ControlesDeUsuario
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Maill;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefonoo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direccionn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dnii;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contraseñaa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Roll;
+        private System.Windows.Forms.DataGridViewButtonColumn Editarr;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminarr;
     }
 }

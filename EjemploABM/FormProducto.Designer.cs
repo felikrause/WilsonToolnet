@@ -163,6 +163,7 @@
             this.comboBoxCat.Name = "comboBoxCat";
             this.comboBoxCat.Size = new System.Drawing.Size(137, 21);
             this.comboBoxCat.TabIndex = 12;
+            this.comboBoxCat.SelectedIndexChanged += new System.EventHandler(this.comboBoxCat_SelectedIndexChanged_1);
             // 
             // comboBoxSub
             // 

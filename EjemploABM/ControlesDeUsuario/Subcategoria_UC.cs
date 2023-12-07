@@ -33,7 +33,8 @@ namespace EjemploABM.ControlesDeUsuario
             subcategorias = Subcategoria_Controller.obtenerSubcategorias();
             ActualizarVista();
         }
-
+       
+        
         private void ActualizarVista()
         {
             dataGridView1.Rows.Clear();

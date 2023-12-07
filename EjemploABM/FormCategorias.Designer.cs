@@ -47,7 +47,7 @@
             // lb_nombre
             // 
             this.lb_nombre.AutoSize = true;
-            this.lb_nombre.Location = new System.Drawing.Point(172, 147);
+            this.lb_nombre.Location = new System.Drawing.Point(138, 147);
             this.lb_nombre.Name = "lb_nombre";
             this.lb_nombre.Size = new System.Drawing.Size(47, 13);
             this.lb_nombre.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(229, 144);
+            this.txt_nombre.Location = new System.Drawing.Point(259, 144);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(125, 20);
             this.txt_nombre.TabIndex = 2;
@@ -83,6 +83,7 @@
             this.Controls.Add(this.label2);
             this.Name = "FormCategorias";
             this.Text = "FromCategorias";
+            this.Load += new System.EventHandler(this.FormCategorias_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

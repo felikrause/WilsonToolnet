@@ -84,10 +84,10 @@ namespace EjemploABM
             }
 
             int catId = (int)ComboBoxCat.SelectedValue;
-            if (catId == null || catId == 0)
+            if (catId == 0)
             {
-                MessageBox.Show("ID categoria: " + catId, "Campos faltantes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                MessageBox.Show("Por favor, seleccione una categoría válida.", "Campos faltantes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
             Subcategoria sub = new Subcategoria(0, txt_nombre.Text, catId);

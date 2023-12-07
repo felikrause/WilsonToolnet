@@ -15,16 +15,8 @@ namespace EjemploABM.Controladores
         {
             //Darlo de alta en la BBDD
 
-            string query = "INSERT INTO dbo.producto VALUES" +
-   "(@id, " +
-   "@nombre, " +
-   "@descripcion, " +
-   "@precio, " +
-   "@img, " +
-   "@subcategoria_id, " +
-   "@categoria_id, " +
-   "@stock" +  // Sin coma aquí
-   ");";
+            string query = "INSERT INTO dbo.producto VALUES (@id, @nombre, @descripcion, @precio, @img, @subcategoria_id, @categoria_id, @stock);";
+
 
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);

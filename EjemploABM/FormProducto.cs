@@ -31,6 +31,9 @@ namespace EjemploABM
         public FormProducto()
         {
             InitializeComponent();
+            CargarCategoriasEnComboBoxCrear();
+            comboBoxCat.SelectedIndexChanged += comboBoxCat_SelectedIndexChanged;
+
             situacion = "creacion";
         }
         public FormProducto(Producto prod)
@@ -272,19 +275,20 @@ namespace EjemploABM
             comboBoxCat.SelectedIndex = -1; // Establece la selección actual en vacío (ningún elemento seleccionado)
         }
 
-        private void ComboBoxCat_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxCat_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxCat.SelectedIndex != -1)
             {
-                int categoriaId = (int)comboBoxCat.SelectedValue; // Obtenemos el Id de la categoría seleccionada
+                int categoriaId = (int)comboBoxCat.SelectedValue;
                 CargarSubcategoriasEnComboBoxCrear(categoriaId);
                 comboBoxSub.Visible = true;
             }
             else
             {
-                comboBoxSub.Visible = false; // Ocultar el ComboBox de subcategorías si no hay categoría seleccionada
+                comboBoxSub.Visible = false;
             }
         }
+
 
         public void CargarSubcategoriasEnComboBoxCrear(int categoriaId)
         {
@@ -342,16 +346,34 @@ namespace EjemploABM
 
         }
 
-        private void comboBoxSub_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxSub_SelectedIndexChanged(object sender, EventArgs e, int categoriaId)
         {
-
+            comboBoxSub.DisplayMember = "Nombre"; // Establece la propiedad que se mostrará en el ComboBox
+            comboBoxSub.ValueMember = "Id"; // Establece la propiedad que se usará como valor interno
+            comboBoxSub.DataSource = Subcategoria_Controller.ObtenerSubcategoriasPorCategoria(categoriaId); // Asigna las subcategorías filtradas por categoría al ComboBox
+            comboBoxSub.SelectedIndex = -1; // Establece la selección actual en vacío (ningún elemento seleccionado)
         }
 
        
 
         private void btn_cargar_img_Click_1(object sender, EventArgs e)
         {
+            OpenFileDialog ofd = new OpenFileDialog();
 
+            ofd.Filter = "*JPG(*.JPG)|*.jpg";
+
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                // Liberar recursos de la imagen actual antes de cargar la nueva
+                if (pictureBox2.Image != null)
+                {
+                    pictureBox2.Image.Dispose();
+                }
+
+                // Cargar la nueva imagen
+                File = Image.FromFile(ofd.FileName);
+                pictureBox2.Image = File;
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -362,6 +384,20 @@ namespace EjemploABM
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBoxCat_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (comboBoxCat.SelectedIndex != -1)
+            {
+                int categoriaId = (int)comboBoxCat.SelectedValue; // Obtenemos el Id de la categoría seleccionada
+                CargarSubcategoriasEnComboBoxCrear(categoriaId);
+                comboBoxSub.Visible = true;
+            }
+            else
+            {
+                comboBoxSub.Visible = false; // Ocultar el ComboBox de subcategorías si no hay categoría seleccionada
+            }
         }
     }
 }

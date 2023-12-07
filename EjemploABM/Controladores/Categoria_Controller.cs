@@ -17,9 +17,10 @@ namespace EjemploABM.Controladores
         {
             //Darlo de alta en la BBDD
 
-            string query = "insert into dbo.categoria values" +
+            string query = "INSERT INTO dbo.categoria (id, nombre) VALUES " +
                "(@id, " +
-               "@nombre, ";
+               "@nombre)";
+
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
             cmd.Parameters.AddWithValue("@id", obtenerMaxId() + 1);
@@ -58,7 +59,11 @@ namespace EjemploABM.Controladores
 
                 while (reader.Read())
                 {
-                    MaxId = reader.GetInt32(0);
+                    // Check if the value is DBNull before accessing it
+                    if (!reader.IsDBNull(0))
+                    {
+                        MaxId = reader.GetInt32(0);
+                    }
                 }
 
                 reader.Close();
@@ -70,6 +75,7 @@ namespace EjemploABM.Controladores
                 throw new Exception("Hay un error en la query: " + ex.Message);
             }
         }
+
 
 
         // GET ALL
@@ -147,7 +153,7 @@ namespace EjemploABM.Controladores
             //Darlo de alta en la BBDD
 
             string query = "UPDATE dbo.categoria SET " +
-                "nombre = @nombre, " +
+                "nombre = @nombre " +
                 "WHERE id = @id;";
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
