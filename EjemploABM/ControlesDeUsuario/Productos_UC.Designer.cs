@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Windows.Forms;
 
 namespace EjemploABM.ControlesDeUsuario
 {
@@ -41,12 +42,7 @@ namespace EjemploABM.ControlesDeUsuario
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Img = new System.Windows.Forms.DataGridViewImageColumn();
-            this.CategoriaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubCategoriaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ver = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -81,7 +77,7 @@ namespace EjemploABM.ControlesDeUsuario
             // 
             // btn_anterior
             // 
-            this.btn_anterior.Location = new System.Drawing.Point(428, 62);
+            this.btn_anterior.Location = new System.Drawing.Point(222, 67);
             this.btn_anterior.Name = "btn_anterior";
             this.btn_anterior.Size = new System.Drawing.Size(101, 23);
             this.btn_anterior.TabIndex = 3;
@@ -91,7 +87,7 @@ namespace EjemploABM.ControlesDeUsuario
             // lblPaginaActual
             // 
             this.lblPaginaActual.AutoSize = true;
-            this.lblPaginaActual.Location = new System.Drawing.Point(558, 67);
+            this.lblPaginaActual.Location = new System.Drawing.Point(352, 72);
             this.lblPaginaActual.Name = "lblPaginaActual";
             this.lblPaginaActual.Size = new System.Drawing.Size(73, 13);
             this.lblPaginaActual.TabIndex = 4;
@@ -100,7 +96,7 @@ namespace EjemploABM.ControlesDeUsuario
             // 
             // btn_siguiente
             // 
-            this.btn_siguiente.Location = new System.Drawing.Point(657, 62);
+            this.btn_siguiente.Location = new System.Drawing.Point(451, 67);
             this.btn_siguiente.Name = "btn_siguiente";
             this.btn_siguiente.Size = new System.Drawing.Size(103, 23);
             this.btn_siguiente.TabIndex = 5;
@@ -110,7 +106,7 @@ namespace EjemploABM.ControlesDeUsuario
             // 
             // btn_add_cat
             // 
-            this.btn_add_cat.Location = new System.Drawing.Point(1009, 56);
+            this.btn_add_cat.Location = new System.Drawing.Point(260, 498);
             this.btn_add_cat.Name = "btn_add_cat";
             this.btn_add_cat.Size = new System.Drawing.Size(128, 29);
             this.btn_add_cat.TabIndex = 6;
@@ -124,18 +120,13 @@ namespace EjemploABM.ControlesDeUsuario
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Nombre,
-            this.Descripcion,
             this.Precio,
-            this.Stock,
-            this.Img,
-            this.CategoriaId,
-            this.SubCategoriaId,
             this.Ver,
             this.Editar,
             this.Eliminar});
             this.dataGridView1.Location = new System.Drawing.Point(16, 98);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1149, 378);
+            this.dataGridView1.Size = new System.Drawing.Size(666, 385);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -149,37 +140,10 @@ namespace EjemploABM.ControlesDeUsuario
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            // 
             // Precio
             // 
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
-            // 
-            // Stock
-            // 
-            this.Stock.HeaderText = "Stock";
-            this.Stock.Name = "Stock";
-            // 
-            // Img
-            // 
-            this.Img.HeaderText = "Img";
-            this.Img.Name = "Img";
-            // 
-            // CategoriaId
-            // 
-            this.CategoriaId.HeaderText = "ID Categoria";
-            this.CategoriaId.Name = "CategoriaId";
-            this.CategoriaId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.CategoriaId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // SubCategoriaId
-            // 
-            this.SubCategoriaId.HeaderText = "ID Sub-Categoria";
-            this.SubCategoriaId.Name = "SubCategoriaId";
             // 
             // Ver
             // 
@@ -211,12 +175,16 @@ namespace EjemploABM.ControlesDeUsuario
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Productos_UC";
-            this.Size = new System.Drawing.Size(1181, 555);
+            this.Size = new System.Drawing.Size(754, 562);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+
+       
+
+        
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -240,12 +208,7 @@ namespace EjemploABM.ControlesDeUsuario
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
-        private System.Windows.Forms.DataGridViewImageColumn Img;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CategoriaId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubCategoriaId;
         private System.Windows.Forms.DataGridViewButtonColumn Ver;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;

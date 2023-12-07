@@ -15,10 +15,16 @@ namespace EjemploABM.Controladores
         {
             //Darlo de alta en la BBDD
 
-            string query = "INSERT INTO dbo.producto VALUES (@id, @nombre, @descripcion, @precio, @img, @subcategoria_id, @categoria_id, @stock);";
-
-           
-            // ...
+            string query = "INSERT INTO dbo.producto VALUES" +
+   "(@id, " +
+   "@nombre, " +
+   "@descripcion, " +
+   "@precio, " +
+   "@img, " +
+   "@subcategoria_id, " +
+   "@categoria_id, " +
+   "@stock" +  // Sin coma aquí
+   ");";
 
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
@@ -33,7 +39,7 @@ namespace EjemploABM.Controladores
 
 
 
-            Trace.WriteLine("Se cargo el producto correctamente");
+
 
 
             try
@@ -85,7 +91,7 @@ namespace EjemploABM.Controladores
         public static List<Producto> obtenerProductos()
         {
             List<Producto> list = new List<Producto>();
-            string query = "SELECT id, nombre, descripción, precio, img,subcategoria_id, categoria_id, stock  FROM dbo.producto;";
+            string query = "SELECT id, nombre, descripción, precio, img, subcategoria_id, categoria_id, stock  FROM dbo.producto;";
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
 
@@ -131,7 +137,7 @@ namespace EjemploABM.Controladores
 
                 while (reader.Read())
                 {
-                    sub = new Producto(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetDouble(3), reader.GetString(4), reader.GetInt32(5), reader.GetInt32(6), reader.GetInt32(7));
+                    sub = new Producto(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetDouble(3), reader.GetString(4), reader.GetInt32(5), reader.GetInt32(6),reader.GetInt32(7));
                     Trace.WriteLine("Prod encontrada, nombre: " + reader.GetString(1));
                 }
 
@@ -224,8 +230,6 @@ namespace EjemploABM.Controladores
             using (SqlCommand cmd = new SqlCommand(query, connection))
             {
                 // Define los parámetros para la consulta.
-                
-
                 cmd.Parameters.AddWithValue("@idAnteriorCategoria", idAnteriorCategoria);
                 cmd.Parameters.AddWithValue("@idCategoriaPosterior", idCategoriaPosterior);
 

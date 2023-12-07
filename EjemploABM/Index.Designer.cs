@@ -37,6 +37,7 @@ namespace EjemploABM
             this.btn_usr = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_prods
@@ -61,7 +62,7 @@ namespace EjemploABM
             // 
             // btn_subca
             // 
-            this.btn_subca.Location = new System.Drawing.Point(12, 256);
+            this.btn_subca.Location = new System.Drawing.Point(12, 249);
             this.btn_subca.Name = "btn_subca";
             this.btn_subca.Size = new System.Drawing.Size(87, 40);
             this.btn_subca.TabIndex = 2;
@@ -71,17 +72,17 @@ namespace EjemploABM
             // 
             // btn_carrito
             // 
-            this.btn_carrito.Location = new System.Drawing.Point(12, 362);
+            this.btn_carrito.Location = new System.Drawing.Point(12, 348);
             this.btn_carrito.Name = "btn_carrito";
             this.btn_carrito.Size = new System.Drawing.Size(87, 42);
             this.btn_carrito.TabIndex = 3;
-            this.btn_carrito.Text = "Carrito";
+            this.btn_carrito.Text = "Nueva Venta";
             this.btn_carrito.UseVisualStyleBackColor = true;
             this.btn_carrito.Click += new System.EventHandler(this.btn_carrito_Click);
             // 
             // btn_usr
             // 
-            this.btn_usr.Location = new System.Drawing.Point(12, 476);
+            this.btn_usr.Location = new System.Drawing.Point(12, 545);
             this.btn_usr.Name = "btn_usr";
             this.btn_usr.Size = new System.Drawing.Size(87, 42);
             this.btn_usr.TabIndex = 4;
@@ -105,11 +106,23 @@ namespace EjemploABM
             this.panel1.Size = new System.Drawing.Size(1166, 568);
             this.panel1.TabIndex = 6;
             // 
+            // button1
+            // 
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.button1.Location = new System.Drawing.Point(12, 446);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 45);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Ver ventas";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1315, 641);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_usr);
@@ -135,5 +148,6 @@ namespace EjemploABM
         private System.Windows.Forms.Button btn_usr;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }

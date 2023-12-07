@@ -26,11 +26,6 @@ namespace EjemploABM.ControlesDeUsuario
             InitializeComponent();
             cargarProductos();
             txtBusqueda.TextChanged += TxtBusqueda_TextChanged;
-            if (Program.logueado.Rol != 1)
-            {
-                btn_add_cat.Hide();
-
-            }
         }
 
         private void TxtBusqueda_TextChanged(object sender, EventArgs e)
@@ -62,7 +57,7 @@ namespace EjemploABM.ControlesDeUsuario
                     dataGridView1.Rows[rowIndex].Cells[2].Value = prod.Descripcion.ToString();
                     dataGridView1.Rows[rowIndex].Cells[3].Value = prod.Precio.ToString();
                     dataGridView1.Rows[rowIndex].Cells[4].Value = prod.Stock.ToString();
-                    dataGridView1.Rows[rowIndex].Cells[5].Value = prod.Img.ToString();
+                    dataGridView1.Rows[rowIndex].Cells[5].Value = prod.Img.ToString(); 
                     dataGridView1.Rows[rowIndex].Cells[6].Value = prod.CategoriaId.ToString();
                     dataGridView1.Rows[rowIndex].Cells[7].Value = prod.SubcategoriaId.ToString();
 
@@ -92,16 +87,12 @@ namespace EjemploABM.ControlesDeUsuario
 
                 dataGridView1.Rows[rowIndex].Cells[0].Value = prod.Id.ToString();
                 dataGridView1.Rows[rowIndex].Cells[1].Value = prod.Nombre.ToString();
-                dataGridView1.Rows[rowIndex].Cells[2].Value = prod.Descripcion.ToString();
-                dataGridView1.Rows[rowIndex].Cells[3].Value = prod.Precio.ToString();
-                dataGridView1.Rows[rowIndex].Cells[4].Value = prod.Stock.ToString();
-                dataGridView1.Rows[rowIndex].Cells[5].Value = prod.Img.ToString();
-                dataGridView1.Rows[rowIndex].Cells[6].Value = prod.CategoriaId.ToString();
-                dataGridView1.Rows[rowIndex].Cells[7].Value = prod.SubcategoriaId.ToString();
+                dataGridView1.Rows[rowIndex].Cells[2].Value = prod.Precio.ToString();
 
-                dataGridView1.Rows[rowIndex].Cells[8].Value = "Ver";
-                dataGridView1.Rows[rowIndex].Cells[9].Value = "Editar";
-                dataGridView1.Rows[rowIndex].Cells[10].Value = "Eliminar";
+
+                dataGridView1.Rows[rowIndex].Cells[3].Value = "Ver";
+                dataGridView1.Rows[rowIndex].Cells[4].Value = "Editar";
+                dataGridView1.Rows[rowIndex].Cells[5].Value = "Eliminar";
             }
 
             lblPaginaActual.Text = $"Página {paginaActual} de {totalDePaginas}";
@@ -125,7 +116,7 @@ namespace EjemploABM.ControlesDeUsuario
             }
         }
 
-        private void btn_add_cat_Click(object sender, EventArgs e)
+        private void btn_add_cat_Click_1(object sender, EventArgs e)
         {
             FormProducto frmProd = new FormProducto();
             DialogResult dr = frmProd.ShowDialog();
@@ -137,7 +128,7 @@ namespace EjemploABM.ControlesDeUsuario
             }
         }
 
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Trace.WriteLine("estoy andando");
             Debug.WriteLine("Celda seleccionada: " + e.ColumnIndex + ", " + e.RowIndex);
@@ -162,31 +153,41 @@ namespace EjemploABM.ControlesDeUsuario
             }
             else if (senderGrid.Columns[e.ColumnIndex].Name == "Eliminar")
             {
-                int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
-                Trace.WriteLine("el id es: " + id);
-
-                DialogResult resultado = MessageBox.Show("¿Estás seguro de que deseas eliminar este producto?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (resultado == DialogResult.Yes)
                 {
-                    try
-                    {
-                        // Llama al método para eliminar el producto directamente
-                        bool eliminado = Producto_Controller.eliminarProducto(id);
+                    Debug.WriteLine("Valor de la celda: " + dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+                    int id = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    Trace.WriteLine("el id es: " + id);
 
-                        if (eliminado)
+                    // Obtener la categoría por ID
+                    Producto prod_eliminar = Producto_Controller.obtenerPorId(id);
+
+                    // Lógica para verificar el rol del usuario logueado
+                    if (Program.logueado.Rol == 1 || Program.logueado.Rol == 2)
+                    {
+                        try
                         {
-                            Trace.WriteLine("Producto eliminado exitosamente");
-                            cargarProductos(); // Otra función para recargar los productos en tu DataGridView
+                            // Eliminar la categoría directamente
+                            bool eliminado = Producto_Controller.eliminarProducto(id);
+
+                            if (eliminado)
+                            {
+                                Trace.WriteLine("Producto eliminado exitosamente");
+                                cargarProductos(); // Otra función para recargar las categorías en tu DataGridView
+                            }
+                            else
+                            {
+                                Trace.WriteLine("Error al intentar eliminar el producto");
+                            }
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            Trace.WriteLine("Error al intentar eliminar el producto");
+                            Trace.WriteLine("Error al eliminar el producto: " + ex.Message);
                         }
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        Trace.WriteLine("Error al eliminar el producto: " + ex.Message);
+                        // En caso de otro valor de logueado.Rol, puedes manejarlo según tus necesidades.
+                        Trace.WriteLine("No tienes permisos para eliminar la categoría.");
                     }
                 }
             }
@@ -203,24 +204,9 @@ namespace EjemploABM.ControlesDeUsuario
                     cargarProductos();
                 }
             }
-
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-
-        private void btn_add_cat_Click_1(object sender, EventArgs e)
-        {
-            FormProducto frmProd = new FormProducto();
-            DialogResult dr = frmProd.ShowDialog();
-
-            if (dr == DialogResult.OK)
-            {
-                Trace.WriteLine("OK - se creo");
-                cargarProductos();
-            }
-        }
     }
 }
+

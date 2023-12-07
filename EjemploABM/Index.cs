@@ -82,6 +82,12 @@ namespace EjemploABM
 
         private void btn_carrito_Click(object sender, EventArgs e)
         {
+            FormVenta form = new FormVenta();
+            form.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             Venta_UC ventaUC = new Venta_UC();
             addUserControl(ventaUC);
         }
