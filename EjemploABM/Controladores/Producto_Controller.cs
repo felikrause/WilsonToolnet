@@ -17,6 +17,8 @@ namespace EjemploABM.Controladores
 
             string query = "INSERT INTO dbo.producto VALUES (@id, @nombre, @descripcion, @precio, @img, @subcategoria_id, @categoria_id, @stock);";
 
+           
+            // ...
 
 
             SqlCommand cmd = new SqlCommand(query, DB_Controller.connection);
@@ -31,7 +33,7 @@ namespace EjemploABM.Controladores
 
 
 
-
+            Trace.WriteLine("Se cargo el producto correctamente");
 
 
             try
@@ -222,6 +224,8 @@ namespace EjemploABM.Controladores
             using (SqlCommand cmd = new SqlCommand(query, connection))
             {
                 // Define los parámetros para la consulta.
+                
+
                 cmd.Parameters.AddWithValue("@idAnteriorCategoria", idAnteriorCategoria);
                 cmd.Parameters.AddWithValue("@idCategoriaPosterior", idCategoriaPosterior);
 

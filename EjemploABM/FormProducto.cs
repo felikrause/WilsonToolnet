@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO; 
 using System.Linq;
@@ -52,7 +53,7 @@ namespace EjemploABM
             comboBoxCat.SelectedValue = prod.CategoriaId;
             comboBoxSub.SelectedValue = prod.SubcategoriaId;
 
-            string filePath = @"C:\Users\Alumno\Documents\GitHub\WilsonToolnet\EjemploABM\Recursos\img\" + prod.Img;
+            string filePath = @"C:\Users\Felipe\source\repos\WilsonToolnet\EjemploABM\Recursos\img\" + prod.Img;
 
             pictureBox2.Image = Image.FromFile(filePath);
 
@@ -133,7 +134,7 @@ namespace EjemploABM
                             nuevoNombreFoto = Producto_Controller.obtenerMaxId() + ".jpg";
 
                             // Guardar la nueva imagen en el directorio de destino
-                            string filePath = @"C:\Users\Alumno\Documents\GitHub\WilsonToolnet\EjemploABM\Recursos\img\" + nuevoNombreFoto;
+                            string filePath = @"C:\Users\Felipe\source\repos\WilsonToolnet\EjemploABM\Recursos\img\" + nuevoNombreFoto;
 
                             // Asegurarse de que el directorio de destino exista
                             if (!Directory.Exists(Path.GetDirectoryName(filePath)))
@@ -179,14 +180,14 @@ namespace EjemploABM
                 string.IsNullOrWhiteSpace(txt_descripcion.Text) ||
                 string.IsNullOrWhiteSpace(txt_precio.Text) ||
                 string.IsNullOrWhiteSpace(txt_cantidad.Text))
-               
-               
+                
+
             {
                 MessageBox.Show("Por favor, complete todos los campos y seleccione un rol antes de crear un usuario.", "Campos faltantes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-           
+            
 
             int catId;
             if (!int.TryParse(comboBoxCat.SelectedValue?.ToString(), out catId) || catId == 0)
@@ -220,7 +221,7 @@ namespace EjemploABM
                             this.DialogResult = DialogResult.OK;
 
                             // Guardar la imagen solo si el producto se ha creado con éxito
-                            string filePath = @"C:\Users\Alumno\Documents\GitHub\WilsonToolnet\EjemploABM\Recursos\img\" + nombrefoto;
+                            string filePath = @"C:\Users\Felipe\source\repos\WilsonToolnet\EjemploABM\Recursos\img\" + nombrefoto;
 
                             // Asegurarse de que el directorio de destino exista
                             if (!Directory.Exists(Path.GetDirectoryName(filePath)))
@@ -398,6 +399,11 @@ namespace EjemploABM
             {
                 comboBoxSub.Visible = false; // Ocultar el ComboBox de subcategorías si no hay categoría seleccionada
             }
+        }
+
+        private void FormProducto_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

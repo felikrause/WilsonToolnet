@@ -27,6 +27,22 @@ namespace EjemploABM.Controladores
 
             Trace.WriteLine("Conexion a la DB: " + connection);
 
+           
+
+        }
+        private static void close()
+        {
+            if (connection.State == System.Data.ConnectionState.Open)
+            {
+                connection.Close();
+            }
+        }
+        private static void open()
+        {
+            if (connection.State == System.Data.ConnectionState.Closed)
+            {
+                connection.Open();
+            }
         }
 
     }

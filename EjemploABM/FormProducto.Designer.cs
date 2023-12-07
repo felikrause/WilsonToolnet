@@ -172,7 +172,6 @@
             this.comboBoxSub.Name = "comboBoxSub";
             this.comboBoxSub.Size = new System.Drawing.Size(137, 21);
             this.comboBoxSub.TabIndex = 13;
-            //this.comboBoxSub.SelectedIndexChanged += new System.EventHandler(this.comboBoxSub_SelectedIndexChanged);
             // 
             // btn_confirmar
             // 
@@ -216,6 +215,7 @@
             this.Controls.Add(this.label2);
             this.Name = "FormProducto";
             this.Text = "FormProducto";
+            this.Load += new System.EventHandler(this.FormProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txt_cantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
