@@ -121,7 +121,6 @@ namespace EjemploABM.ControlesDeUsuario
                     Trace.WriteLine("No tienes permisos para eliminar la subcategoría.");
                 }
             }
-
         }
     }
 }
