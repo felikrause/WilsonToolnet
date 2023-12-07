@@ -229,7 +229,7 @@ namespace EjemploABM.Controladores
                     int id = reader.GetInt32(0);
                     string nombre = reader.GetString(1);
                     int categoria = reader.GetInt32(2);
-                    string estaActivo = reader.GetString(3);
+                    //string estaActivo = reader.GetString(3);
 
                     Subcategoria subcategoria = new Subcategoria(id, nombre, categoria);
                     subcategorias.Add(subcategoria);
