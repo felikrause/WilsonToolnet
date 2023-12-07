@@ -121,7 +121,16 @@ namespace EjemploABM.ControlesDeUsuario
             }
         }
 
+        private void btn_add_cat_Click_1(object sender, EventArgs e)
+        {
+            FormCategorias frmCat = new FormCategorias();
+            DialogResult dr = frmCat.ShowDialog();
 
-        
+            if (dr == DialogResult.OK)
+            {
+                Trace.WriteLine("OK - se creo");
+                CargarCategorias();
+            }
+        }
     }
 }

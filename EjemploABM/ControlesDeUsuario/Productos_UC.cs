@@ -137,7 +137,7 @@ namespace EjemploABM.ControlesDeUsuario
             }
         }
 
-        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Trace.WriteLine("estoy andando");
             Debug.WriteLine("Celda seleccionada: " + e.ColumnIndex + ", " + e.RowIndex);
@@ -213,7 +213,14 @@ namespace EjemploABM.ControlesDeUsuario
 
         private void btn_add_cat_Click_1(object sender, EventArgs e)
         {
+            FormProducto frmProd = new FormProducto();
+            DialogResult dr = frmProd.ShowDialog();
 
+            if (dr == DialogResult.OK)
+            {
+                Trace.WriteLine("OK - se creo");
+                cargarProductos();
+            }
         }
     }
 }

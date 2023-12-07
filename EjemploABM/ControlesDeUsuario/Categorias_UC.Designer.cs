@@ -61,6 +61,7 @@ namespace EjemploABM.ControlesDeUsuario
             this.btn_add_cat.TabIndex = 2;
             this.btn_add_cat.Text = "Agregar";
             this.btn_add_cat.UseVisualStyleBackColor = true;
+            this.btn_add_cat.Click += new System.EventHandler(this.btn_add_cat_Click_1);
             // 
             // Categorias_UC
             // 
