@@ -70,7 +70,7 @@ namespace EjemploABM.ControlesDeUsuario
             // 
             // btn_anterior
             // 
-            this.btn_anterior.Location = new System.Drawing.Point(299, 62);
+            this.btn_anterior.Location = new System.Drawing.Point(236, 67);
             this.btn_anterior.Name = "btn_anterior";
             this.btn_anterior.Size = new System.Drawing.Size(101, 23);
             this.btn_anterior.TabIndex = 3;
@@ -80,7 +80,7 @@ namespace EjemploABM.ControlesDeUsuario
             // lblPaginaActual
             // 
             this.lblPaginaActual.AutoSize = true;
-            this.lblPaginaActual.Location = new System.Drawing.Point(429, 67);
+            this.lblPaginaActual.Location = new System.Drawing.Point(366, 72);
             this.lblPaginaActual.Name = "lblPaginaActual";
             this.lblPaginaActual.Size = new System.Drawing.Size(73, 13);
             this.lblPaginaActual.TabIndex = 4;
@@ -89,7 +89,7 @@ namespace EjemploABM.ControlesDeUsuario
             // 
             // btn_siguiente
             // 
-            this.btn_siguiente.Location = new System.Drawing.Point(528, 62);
+            this.btn_siguiente.Location = new System.Drawing.Point(465, 67);
             this.btn_siguiente.Name = "btn_siguiente";
             this.btn_siguiente.Size = new System.Drawing.Size(103, 23);
             this.btn_siguiente.TabIndex = 5;
@@ -99,7 +99,7 @@ namespace EjemploABM.ControlesDeUsuario
             // 
             // btn_add_cat
             // 
-            this.btn_add_cat.Location = new System.Drawing.Point(782, 56);
+            this.btn_add_cat.Location = new System.Drawing.Point(635, 61);
             this.btn_add_cat.Name = "btn_add_cat";
             this.btn_add_cat.Size = new System.Drawing.Size(128, 29);
             this.btn_add_cat.TabIndex = 6;
@@ -112,7 +112,7 @@ namespace EjemploABM.ControlesDeUsuario
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(16, 98);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(884, 381);
+            this.dataGridView1.Size = new System.Drawing.Size(790, 377);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -129,7 +129,7 @@ namespace EjemploABM.ControlesDeUsuario
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Productos_UC";
-            this.Size = new System.Drawing.Size(938, 510);
+            this.Size = new System.Drawing.Size(816, 518);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

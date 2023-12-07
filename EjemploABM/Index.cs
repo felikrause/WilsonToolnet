@@ -64,7 +64,26 @@ namespace EjemploABM
 
         private void btn_usr_Click_1(object sender, EventArgs e)
         {
-            
+            Usuarios_UC usrUC = new Usuarios_UC();
+            addUserControl(usrUC);
         }
 
+        private void btn_cat_Click_1(object sender, EventArgs e)
+        {
+            Categorias_UC catsUC = new Categorias_UC();
+            addUserControl(catsUC);
+        }
+
+        private void btn_subca_Click_1(object sender, EventArgs e)
+        {
+            Subcategoria_UC subcaUC = new Subcategoria_UC();
+            addUserControl(subcaUC);
+        }
+
+        private void btn_carrito_Click(object sender, EventArgs e)
+        {
+            Venta_UC ventaUC = new Venta_UC();
+            addUserControl(ventaUC);
+        }
     }
+}

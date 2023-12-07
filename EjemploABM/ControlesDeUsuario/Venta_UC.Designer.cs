@@ -45,7 +45,7 @@
             // 
             // btn_add_venta
             // 
-            this.btn_add_venta.Location = new System.Drawing.Point(732, 33);
+            this.btn_add_venta.Location = new System.Drawing.Point(573, 33);
             this.btn_add_venta.Name = "btn_add_venta";
             this.btn_add_venta.Size = new System.Drawing.Size(118, 45);
             this.btn_add_venta.TabIndex = 1;
@@ -56,7 +56,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(96, 100);
+            this.dataGridView1.Location = new System.Drawing.Point(59, 98);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(632, 329);
             this.dataGridView1.TabIndex = 2;
@@ -71,6 +71,7 @@
             this.Controls.Add(this.lb_ventas);
             this.Name = "Venta_UC";
             this.Size = new System.Drawing.Size(910, 501);
+            this.Load += new System.EventHandler(this.Venta_UC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

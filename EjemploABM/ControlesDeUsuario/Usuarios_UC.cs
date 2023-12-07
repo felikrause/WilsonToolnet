@@ -23,6 +23,8 @@ namespace EjemploABM.ControlesDeUsuario
             cargarUsuarios();
         }
 
+
+
         private void cargarUsuarios()
         {
             users = Usuario_Controller.obtenerTodos();
@@ -47,7 +49,35 @@ namespace EjemploABM.ControlesDeUsuario
 
             }
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void btn_new_Click(object sender, EventArgs e)
+        {
+            FormUsuarios frmUser = new FormUsuarios();
+            DialogResult dr = frmUser.ShowDialog();
+
+            if(dr == DialogResult.OK)
+            {
+                Trace.WriteLine("OK");
+            }
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            FormUsuarios frmUser = new FormUsuarios();
+            DialogResult dr = frmUser.ShowDialog();
+
+            if (dr == DialogResult.OK)
+            {
+                Trace.WriteLine("OK - se creo");
+                //ACTUALIZAR LA LISTA
+                cargarUsuarios();
+
+            }
+
+        }
+
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             Trace.WriteLine("estoy andando");
             Debug.WriteLine("Celda seleccionada: " + e.ColumnIndex + ", " + e.RowIndex);
@@ -81,38 +111,6 @@ namespace EjemploABM.ControlesDeUsuario
                 Trace.WriteLine("el id es: " + id);
                 Usuario user_eliminar = Usuario_Controller.obtenerPorId(id);
             }
-
-        }
-        private void btn_new_Click(object sender, EventArgs e)
-        {
-            FormUsuarios frmUser = new FormUsuarios();
-            DialogResult dr = frmUser.ShowDialog();
-
-            if(dr == DialogResult.OK)
-            {
-                Trace.WriteLine("OK");
-            }
-        }
-
-        private void btn_add_Click(object sender, EventArgs e)
-        {
-            FormUsuarios frmUser = new FormUsuarios();
-            DialogResult dr = frmUser.ShowDialog();
-
-            if (dr == DialogResult.OK)
-            {
-                Trace.WriteLine("OK - se creo");
-                //ACTUALIZAR LA LISTA
-                cargarUsuarios();
-
-            }
-
-        }
-
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

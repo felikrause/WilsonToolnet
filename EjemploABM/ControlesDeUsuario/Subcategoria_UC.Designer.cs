@@ -48,13 +48,13 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(55, 61);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(734, 541);
+            this.dataGridView1.Size = new System.Drawing.Size(548, 610);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btn_add_cat
             // 
-            this.btn_add_cat.Location = new System.Drawing.Point(743, 20);
+            this.btn_add_cat.Location = new System.Drawing.Point(492, 21);
             this.btn_add_cat.Name = "btn_add_cat";
             this.btn_add_cat.Size = new System.Drawing.Size(111, 34);
             this.btn_add_cat.TabIndex = 2;
@@ -70,7 +70,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "Subcategoria_UC";
-            this.Size = new System.Drawing.Size(925, 639);
+            this.Size = new System.Drawing.Size(627, 685);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

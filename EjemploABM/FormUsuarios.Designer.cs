@@ -86,7 +86,7 @@ namespace EjemploABM
             // 
             // txt_mail
             // 
-            this.txt_mail.Location = new System.Drawing.Point(174, 132);
+            this.txt_mail.Location = new System.Drawing.Point(174, 135);
             this.txt_mail.Name = "txt_mail";
             this.txt_mail.Size = new System.Drawing.Size(132, 20);
             this.txt_mail.TabIndex = 4;
@@ -110,7 +110,7 @@ namespace EjemploABM
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(113, 135);
+            this.label4.Location = new System.Drawing.Point(112, 142);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 7;

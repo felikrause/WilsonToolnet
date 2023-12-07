@@ -47,7 +47,7 @@ namespace EjemploABM.ControlesDeUsuario
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(124, 113);
+            this.dataGridView1.Location = new System.Drawing.Point(41, 102);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(500, 262);
             this.dataGridView1.TabIndex = 1;
@@ -55,7 +55,7 @@ namespace EjemploABM.ControlesDeUsuario
             // 
             // btn_add_cat
             // 
-            this.btn_add_cat.Location = new System.Drawing.Point(592, 27);
+            this.btn_add_cat.Location = new System.Drawing.Point(416, 39);
             this.btn_add_cat.Name = "btn_add_cat";
             this.btn_add_cat.Size = new System.Drawing.Size(125, 37);
             this.btn_add_cat.TabIndex = 2;
@@ -70,7 +70,7 @@ namespace EjemploABM.ControlesDeUsuario
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Name = "Categorias_UC";
-            this.Size = new System.Drawing.Size(771, 439);
+            this.Size = new System.Drawing.Size(578, 449);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

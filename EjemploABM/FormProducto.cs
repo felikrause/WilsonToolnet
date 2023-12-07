@@ -268,7 +268,7 @@ namespace EjemploABM
         {
             comboBoxCat.DisplayMember = "Nombre"; // Establece la propiedad que se mostrará en el ComboBox
             comboBoxCat.ValueMember = "Id"; // Establece la propiedad que se usará como valor interno
-            comboBoxCat.DataSource = Categoria_Controller.ObtenerCategoriasActivas(); // Asigna la lista de categorías al ComboBox
+            comboBoxCat.DataSource = Categoria_Controller.ObtenerCategorias(); // Asigna la lista de categorías al ComboBox
             comboBoxCat.SelectedIndex = -1; // Establece la selección actual en vacío (ningún elemento seleccionado)
         }
 

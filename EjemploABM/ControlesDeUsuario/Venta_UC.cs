@@ -101,5 +101,10 @@ namespace EjemploABM.ControlesDeUsuario
                 Trace.WriteLine("OK");
             }
         }
+
+        private void Venta_UC_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
