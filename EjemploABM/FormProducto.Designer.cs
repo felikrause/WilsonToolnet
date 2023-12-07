@@ -172,7 +172,7 @@
             this.comboBoxSub.Name = "comboBoxSub";
             this.comboBoxSub.Size = new System.Drawing.Size(137, 21);
             this.comboBoxSub.TabIndex = 13;
-            this.comboBoxSub.SelectedIndexChanged += new System.EventHandler(this.comboBoxSub_SelectedIndexChanged);
+            //this.comboBoxSub.SelectedIndexChanged += new System.EventHandler(this.comboBoxSub_SelectedIndexChanged);
             // 
             // btn_confirmar
             // 

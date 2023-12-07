@@ -19,7 +19,7 @@ namespace EjemploABM.ControlesDeUsuario
         public Subcategoria_UC()
         {
             InitializeComponent();
-            InitializeComponent();
+            //InitializeComponent();
             CargarSubcategorias();
             if (Program.logueado.Rol != 1)
             {
@@ -38,8 +38,8 @@ namespace EjemploABM.ControlesDeUsuario
         private void ActualizarVista()
         {
             dataGridView1.Rows.Clear();
-
-            foreach (var subcategoria in subcategorias)
+            
+            foreach (Subcategoria subcategoria in subcategorias)
             {
                 int rowIndex = dataGridView1.Rows.Add();
 
